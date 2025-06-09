@@ -1,5 +1,0 @@
-INSERT INTO usuarios (nombre, email, password, rol) 
-VALUES ('Monica', 'monica@correo.com', '123', 'admin'), 
-('Alianza1', 'alianza1@correo.com', '109', 'vendedor'), 
-('Alianza2', 'alianza2@correo.com', '209', 'vendedor'); 
-SELECT * FROM usuarios WHERE 1

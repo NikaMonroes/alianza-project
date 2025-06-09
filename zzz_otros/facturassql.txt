@@ -1,9 +1,0 @@
-CREATE TABLE facturas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    numero_factura VARCHAR(20) UNIQUE,
-    fecha DATETIME,
-    total DECIMAL(10,2),
-    vendedor VARCHAR(100)
-);
-
-
