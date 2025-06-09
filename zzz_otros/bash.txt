@@ -1,0 +1,36 @@
+cafeteria/
+├── index.php                       # Punto de entrada: redirige al login si no hay sesión
+├── db.php                          # Archivo de conexión a la base de datos
+
+├── /includes/                      # Lógica común y dashboards
+│   ├── auth.php                    # Gestión de sesión y verificación de roles
+│   ├── header.php                  # Cabecera HTML común
+│   ├── footer.php                  # Footer HTML común
+│   ├── dashboard_admin.php         # Vista del dashboard para administrador
+│   └── dashboard_vendedor.php      # Vista del dashboard para vendedor
+
+├── /productos/                     # CRUD de productos (admin)
+│   ├── listar.php
+│   ├── crear.php
+│   ├── editar.php
+│   └── eliminar.php
+
+├── /ventas/                        # Gestión de ventas
+│   ├── registrar.php               # Formulario para registrar una venta (vendedor)
+│   ├── historial.php               # Ver historial de ventas
+│   └── confirmar.php               # Validación y ejecución de la venta
+
+├── /consultas/                     # Consultas especiales (admin)
+│   ├── mas_stock.php               # Producto con más stock
+│   └── mas_vendido.php             # Producto más vendido
+
+├── /usuarios/                      # Gestión de login/logout (solo login en esta fase)
+│   ├── login.php
+│   └── logout.php
+
+├── /assets/                        # Archivos estáticos
+│   ├── style.css
+│   ├── script.js                   # JS general si lo usas
+│   └── logo.png                    # Logo u otros elementos visuales
+
+└── README.md                       # (Opcional) Documentación del proyecto

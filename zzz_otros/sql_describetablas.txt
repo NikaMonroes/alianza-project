@@ -1,0 +1,121 @@
+DESCRIBE usuarios;
+DESCRIBE facturas;
+DESCRIBE productos;
+DESCRIBE ventas;
+DESCRIBE detalle_factura;
+
+127.0.0.1/cafeteria/usuarios/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=cafeteria&table=usuarios
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+DESCRIBE usuarios;
+
+
+DESCRIBE facturas;
+
+
+DESCRIBE productos;
+
+
+DESCRIBE ventas;
+
+
+DESCRIBE detalle_factura;
+
+
+
+id	int(11)	NO	PRI	NULL	auto_increment	
+nombre	varchar(100)	NO		NULL		
+email	varchar(100)	NO	UNI	NULL		
+password	varchar(255)	NO		NULL		
+rol	enum('admin','vendedor')	NO		NULL		
+token_recuperacion	varchar(255)	YES		NULL		
+token_expiracion	datetime	YES		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+numero_factura	varchar(20)	YES	UNI	NULL		
+fecha	datetime	YES		NULL		
+total	decimal(10,2)	YES		NULL		
+vendedor	varchar(100)	YES		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+nombre	varchar(100)	NO		NULL		
+referencia	varchar(50)	NO		NULL		
+precio	int(11)	NO		NULL		
+peso	decimal(10,2)	NO		NULL		
+categoria	varchar(50)	NO		NULL		
+stock	int(11)	NO		NULL		
+fecha_creacion	date	NO		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+producto_id	int(11)	NO	MUL	NULL		
+cantidad	int(11)	NO		NULL		
+fecha_venta	date	NO		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+factura_id	int(11)	YES	MUL	NULL		
+producto_id	int(11)	YES	MUL	NULL		
+cantidad	int(11)	YES		NULL		
+precio_unitario	decimal(10,2)	YES		NULL		
+
+
+
+127.0.0.1/cafeteria/usuarios/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=cafeteria&table=usuarios
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+Su consulta se ejecutó con éxito.
+
+DESCRIBE usuarios;
+
+
+DESCRIBE facturas;
+
+
+DESCRIBE productos;
+
+
+DESCRIBE ventas;
+
+
+DESCRIBE detalle_factura;
+
+
+
+id	int(11)	NO	PRI	NULL	auto_increment	
+nombre	varchar(100)	NO		NULL		
+email	varchar(100)	NO	UNI	NULL		
+password	varchar(255)	NO		NULL		
+rol	enum('admin','vendedor')	NO		NULL		
+token_recuperacion	varchar(255)	YES		NULL		
+token_expiracion	datetime	YES		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+numero_factura	varchar(20)	YES	UNI	NULL		
+fecha	datetime	YES		NULL		
+total	decimal(10,2)	YES		NULL		
+vendedor	varchar(100)	YES		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+nombre	varchar(100)	NO		NULL		
+referencia	varchar(50)	NO		NULL		
+precio	int(11)	NO		NULL		
+peso	decimal(10,2)	NO		NULL		
+categoria	varchar(50)	NO		NULL		
+stock	int(11)	NO		NULL		
+fecha_creacion	date	NO		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+producto_id	int(11)	NO	MUL	NULL		
+cantidad	int(11)	NO		NULL		
+fecha_venta	date	NO		NULL		
+id	int(11)	NO	PRI	NULL	auto_increment	
+factura_id	int(11)	YES	MUL	NULL		
+producto_id	int(11)	YES	MUL	NULL		
+cantidad	int(11)	YES		NULL		
+precio_unitario	decimal(10,2)	YES		NULL		

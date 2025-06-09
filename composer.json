@@ -1,0 +1,12 @@
+{
+    "name": "monro/cafeteria",
+    "description": "Sistema de gestion cafeteria",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "dompdf/dompdf": "dev-master",
+        "phpoffice/phpspreadsheet": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
+    }
+}

@@ -1,0 +1,89 @@
+session_start();
+require_once "../db.php"; // Asegura que la conexión a la base de datos esté disponible
+
+function login($email, $contrasena) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT id, nombre, email, password, rol FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        
+        // Verificar si la contraseña es correcta
+        if (password_verify($contrasena, $row['password'])) {
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['nombre'] = $row['nombre'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['rol'] = $row['rol'];
+
+            return true; // Login exitoso
+        }
+    }
+    return false; // Credenciales incorrectas
+}
+
+// Función para verificar si el usuario está autenticado
+function is_logged_in() {
+    return isset($_SESSION['id']);
+}
+
+// Función para cerrar sesión
+function logout() {
+    session_destroy();
+    header("Location: ../usuarios/login.php");
+    exit();
+}
+?>
+
+
+
+
+
+===============
+
+<?php
+session_start();
+require_once "../db.php"; // Incluir la conexión a la base de datos
+
+// Función para iniciar sesión
+function login($usuario, $contrasena) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT id, usuario, contrasena, rol FROM usuarios WHERE usuario = ?");
+    $stmt->bind_param("s", $usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        if (password_verify($contrasena, $row['contrasena'])) {
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['usuario'] = $row['usuario'];
+            $_SESSION['rol'] = $row['rol'];
+            return true; // Login exitoso
+        }
+    }
+    return false; // Credenciales incorrectas
+}
+
+// Función para verificar si el usuario está autenticado
+function is_logged_in() {
+    return isset($_SESSION['id']);
+}
+
+// Función para cerrar sesión
+function logout() {
+    session_destroy();
+    header("Location: ../usuarios/login.php");
+    exit();
+}
+
+// Función para validar acceso por rol
+function require_role($role) {
+    if (!is_logged_in() || $_SESSION['rol'] !== $role) {
+        header("Location: ../index.php"); // Redirigir si no tiene acceso
+        exit();
+    }
+}
+?>
