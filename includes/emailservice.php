@@ -13,7 +13,7 @@ function enviarCorreo($destinatario, $asunto, $mensaje) {
         $mail->Host = 'smtp.gmail.com'; // Cambia según tu proveedor (ej. smtp.office365.com)
         $mail->SMTPAuth = true;
         $mail->Username = 'monicaromerofreelance@gmail.com'; // Tu correo
-        $mail->Password = 'wmwb betx fvww cmdz'; // Usa una contraseña de aplicación si usas Gmail
+        $mail->Password = 'XXXX XXXX XXXX XXXX'; // Usa una contraseña de aplicación si usas Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
