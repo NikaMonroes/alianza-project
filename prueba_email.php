@@ -5,7 +5,7 @@ require_once 'includes/emailservice.php'; // ojo con la ruta que no lleva ../inc
 // Datos de la cuenta de correo
 
 
-$destinatario = "monroes74@gmail.com";
+$destinatario = "correo@gmail.com";
 $asunto = "¡Gracias por tu compra!";
 $mensaje = "<h1>Tu pedido ha sido procesado</h1><p>Gracias por confiar en nosotros.</p>";
 
